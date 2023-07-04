@@ -1,0 +1,11 @@
+create database Products;
+create table Sales1(id int auto_increment primary key, product_Name varchar(20), quantity int, unit_price decimal, total_price decimal, customer_name varchar(20), sale_date date);
+insert into Sales(product_Name, quantity, unit_price, total_price, customer_name, sale_date) values ('phone', 3, 2000.00, 6000.00, 'Sanjana', '2023-02-19'), ('watch', 5, 1000.00, 5000.00, 'Lakshmi', '2023-01-15'), ('bangles', 20, 50.00, 1000.00, 'sneha', '2023-09-10'), ('widget', 5, 20.00, 100.00, 'John Smith', '2022-12-07'), ('Toy', 8, 500.00, 4000.00, 'Karthik', '2023-06-30'); 
+alter table Sales modify column unit_price decimal; 
+alter table Sales modify column total_price decimal;
+select * from Sales;
+select * from Sales where customer_name='John Smith';
+select * from Sales where customer_name='Shruthi' and product_Name='phone';
+select * from Sales where customer_name='Karthik' or product_Name='bangles';
+select * from Sales where quantity>5 and total_price<5000;
+select * from Sales where sale_date='2023-06-30' and total_price>=500;
